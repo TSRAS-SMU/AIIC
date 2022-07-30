@@ -3,7 +3,9 @@ Code for Fourth session China Graduate AI Innovation Competition : Applied pract
 
 ## Data Prepare
 
-Download from :
+Download [data]() to `$AIIC/data`
+> Upload data to this repository when competition end
+
 
 ### Set Your own COCO Dataset Config
 
