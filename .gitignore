@@ -16,6 +16,4 @@ experiment-*
 not_tracked_dir/
 .vscode
 model/*
-.circleci/
 data/
-.github/
