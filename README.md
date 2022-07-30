@@ -7,8 +7,6 @@ Download from :
 
 ### Set Your own COCO Dataset Config
 
-`datasets/coco.py`
-
 my dataset example:
 ```shell
     ├── data
@@ -18,11 +16,11 @@ my dataset example:
     │       │   ├── objectDetection_train2022.json
     │       │   └── objectDetection_val2022.json
     │       ├── test2022
-    |       |   └── *.jpg
+    |       |   └── jpgs
     │       ├── train2022
-    |       |   └──*.jpg
+    |       |   └──jpgs
     │       └── val2022
-    |           └──*.jpg
+    |           └──jpgs
     ├── datasets
     │   ├── coco_eval.py
     │   ├── coco_panoptic.py
@@ -32,6 +30,7 @@ my dataset example:
     │   └── transforms.py
 
 ```
+set `datasets/coco.py` with dataset 
 
 ```python
 def build(image_set, args):
