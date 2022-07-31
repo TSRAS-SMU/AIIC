@@ -16,8 +16,7 @@ python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wh
 
 ## Data Prepare
 
-Download [data]() to `AIIC/data`
-> Upload data to this repository when competition end
+Download [data](https://drive.google.com/file/d/1hB6UX7rIsnNiOmh5vp1EeHtEBtrdCnUr/view?usp=sharing) to `$AIIC/data`
 
 
 ### Set Your own COCO Dataset Config
