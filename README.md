@@ -1,9 +1,22 @@
 # AIIC
 Code for Fourth session China Graduate AI Innovation Competition : Applied practice competition questions
 
+## Installation
+
+
+```
+conda create -n aiic python=3.7 -y
+conda activate aiic
+conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit=11.3 -c pytorch -c conda-forge
+conda install cython scipy
+pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
+pip install git+https://github.com/cocodataset/panopticapi.git
+python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html
+```
+
 ## Data Prepare
 
-Download [data]() to `$AIIC/data`
+Download [data]() to `AIIC/data`
 > Upload data to this repository when competition end
 
 
@@ -18,11 +31,11 @@ my dataset example:
     │       │   ├── objectDetection_train2022.json
     │       │   └── objectDetection_val2022.json
     │       ├── test2022
-    |       |   └── jpgs
+    │       │   └── jpgs
     │       ├── train2022
-    |       |   └──jpgs
+    │       │   └──jpgs
     │       └── val2022
-    |           └──jpgs
+    │           └──jpgs
     ├── datasets
     │   ├── coco_eval.py
     │   ├── coco_panoptic.py
@@ -48,10 +61,19 @@ def build(image_set, args):
     dataset = CocoDetection(img_folder, ann_file, transforms=make_coco_transforms(image_set), return_masks=args.masks)
     return dataset
 ```
+## Inference
+
+```
+python inference.py --batch_size 2 --no_aux_loss --eval --resume detr-r50-e632da11.pth --coco_path data/ship2022/
+```
 
 ## Train
 
-```python
+```
 python main.py --batch_size 2 --coco_path data/ship2022/
+```
 
+## Test
+```
+python test.py --batch_size 2 --no_aux_loss --eval --resume detr-r50-e632da11.pth --coco_path data/ship2022/
 ```
