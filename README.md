@@ -3,16 +3,18 @@ Code for Fourth session China Graduate AI Innovation Competition : Applied pract
 
 ## Installation
 
-
-```
+```shell
 conda create -n aiic python=3.7 -y
 conda activate aiic
 conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit=11.3 -c pytorch -c conda-forge
 conda install cython scipy
 pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
-pip install git+https://github.com/cocodataset/panopticapi.git
+```
+```
+# linux only , windows pass this step
 python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html
 ```
+
 
 ## Data Prepare
 
